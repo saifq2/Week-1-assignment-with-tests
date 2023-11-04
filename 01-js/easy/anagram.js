@@ -8,7 +8,28 @@
 */
 
 function isAnagram(str1, str2) {
+  var s1=sortString(str1.toLowerCase());
+  var s2=sortString(str2.toLowerCase());
+   console.log(s1);
+   console.log(s2);
+  
+  if(s1===s2){
+   console.log("Anagram");
+   return true;
+  }
+  else{
+    console.log("No Anagaram")
+    return false;
+
+  }
 
 }
+function sortString(str){
+  var arr=str.split("");
+  arr.sort();
+  var sortedStr=arr.join("");
+  return sortedStr;
+}
+isAnagram("Debit Card","Bad Credit");
 
 module.exports = isAnagram;

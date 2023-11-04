@@ -7,7 +7,33 @@
 */
 
 function isPalindrome(str) {
+  var start=0;
+  var end=str.length-1;
+
+  while(start<end){
+if(str[start].match(/^[., :!?]/)){
+  //console.log(start);
+  start++;
+  continue;
+}
+if(str[end].match(/^[., :!?]/ )){
+  //console.log(end);
+  end--;
+  continue;
+}
+    if(str[start].toLowerCase()===str[end].toLowerCase()){
+      start++;
+      end--;
+    }
+    else{
+     // console.log(str[start]+str[end]);
+      return false;
+    }
+    
+   
+  }
+  //console.log(end);
   return true;
 }
-
+console.log(isPalindrome("Able, was I ere I saw Elba!"))
 module.exports = isPalindrome;
